@@ -1,11 +1,11 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  MyTheme
  * @since   1.0
  * @version 1.0
  */
 
-namespace radiustheme\MyTheme_Core;
+namespace MyTheme\MyTheme_Core;
 
 $btn = $attr = '';
 

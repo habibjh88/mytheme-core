@@ -1,13 +1,13 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  MyTheme
  * @since   1.0
  * @version 1.0
  */
 
-namespace radiustheme\MyTheme_Core;
+namespace MyTheme\MyTheme_Core;
 
-use radiustheme\MyTheme\Helper;
+use MyTheme\Helper;
 
 use \WP_Query;
 

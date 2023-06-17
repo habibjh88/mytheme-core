@@ -1,14 +1,14 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  MyTheme
  * @since   1.0
  * @version 1.0
  */
 
-namespace radiustheme\MyTheme_Core;
+namespace MyTheme\MyTheme_Core;
 
 use Elementor\Plugin;
-use radiustheme\MyTheme\Helper;
+use MyTheme\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -26,8 +26,6 @@ class Custom_Widget_Init {
 		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );
 		add_action( 'elementor/icons_manager/additional_tabs', [ $this, 'mytheme_flaticon_tab' ] );
 		add_action( 'elementor/editor/after_enqueue_styles', [ $this, 'editor_style' ] );
-		//add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'editor_scripts' ] );
-		//add_action( "elementor/frontend/after_enqueue_scripts", [ $this, 'rt_load_scripts' ] );
 	}
 
 	public function editor_style() {
@@ -38,19 +36,6 @@ class Custom_Widget_Init {
 		wp_add_inline_style( 'elementor-editor', '.elementor-panel .elementor-control-type-heading .elementor-control-title {color: #93013d !important}' );
 	}
 
-	//load editor script
-	public function editor_scripts() {
-		wp_enqueue_script( 'select2' );
-		wp_enqueue_script( 'rt-el-editor-script', MYTHEME_CORE_BASE_URL . 'elementor/assets/el_editor.js', [ 'jquery' ], MYTHEME_CORE, true );
-	}
-
-	//load frontend script
-	public function rt_load_scripts() {
-		//wp_enqueue_script( 'imagesloaded' );
-		//wp_enqueue_script( 'isotope' );
-		wp_enqueue_script( 'select2' );
-		wp_enqueue_script( 'elementor-script', MYTHEME_CORE_BASE_URL . 'elementor/assets/scripts.js', [ 'jquery' ], MYTHEME_CORE, true );
-	}
 
 	public function init() {
 		require_once __DIR__ . '/base.php';
@@ -58,29 +43,12 @@ class Custom_Widget_Init {
 		// dirname => classname /@dev
 		$widgets = [
 			'title'             => 'Title',
-			'video-icon'        => 'Video_Icon',
-			'title-animated'    => 'Title_Animated',
 			'post'              => 'Post',
 			'text-button'       => 'Button',
 			'info-box'          => 'Info_Box',
-			'testimonial'       => 'Testimonial_Carousel',
 			'parallax'          => 'RT_Parallax',
-			'rt-slider'         => 'RT_Slider',
-			'team'              => 'Rt_Team',
-			'progress-bar'      => 'RT_Progress_Bar',
-			'pricing-table'     => 'Pricing_Table',
 			'image-placeholder' => 'Image_Placeholder',
-
 		];
-
-		if ( class_exists( 'Rtcl' ) ) {
-			$widgets += [
-				'rt-properties'        => 'RT_Properties',
-				'listing-location-box' => 'Listing_Location_Box',
-				'agent'                => 'RT_Agent',
-				'listing-category'     => 'RT_Listing_Category',
-			];
-		}
 
 		foreach ( $widgets as $dirname => $class ) {
 			$template_name = '/elementor-custom/' . $dirname . '/class.php';
@@ -123,7 +91,7 @@ class Custom_Widget_Init {
 	public function widget_category( $class ) {
 		$id         = MYTHEME_CORE_THEME_PREFIX . '-widgets'; // Category /@dev
 		$properties = [
-			'title' => __( 'RadiusTheme Elements', 'mytheme-core' ),
+			'title' => __( 'MyTheme Elements', 'mytheme-core' ),
 		];
 
 		Plugin::$instance->elements_manager->add_category( $id, $properties );

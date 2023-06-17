@@ -1,13 +1,13 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  MyTheme
  * @since   1.0
  * @version 1.0
  */
 
-namespace radiustheme\MyTheme_Core;
+namespace MyTheme\MyTheme_Core;
 
-use radiustheme\MyTheme\Helper;
+use MyTheme\Helper;
 
 $thumb_size = $data['project_thumbnail_size'] ? $data['project_thumbnail_size'] : 'rdtheme-size2';
 $args       = [
@@ -82,7 +82,7 @@ $col_class = "col-lg-{$gird_column_desktop} col-md-{$gird_column_tab} col-sm-{$g
 								<?php if ( $data['date_visibility'] ) : ?>
                                     <a class="post-category" href="<?php echo esc_url( Helper::get_date_archive_link() ) ?>" rel="bookmark">
 										<?php
-										if ( 'default' !== $data['p_date_format'] &&  class_exists( 'radiustheme\MyTheme\Helper' )) {
+										if ( 'default' !== $data['p_date_format'] &&  class_exists( 'MyTheme\Helper' )) {
 											echo Helper::time_elapsed_string();
 										} else {
 											the_time( get_option( 'date_format' ) );

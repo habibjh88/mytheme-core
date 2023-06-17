@@ -1,13 +1,13 @@
 <?php
 /**
- * @author RadiusTheme
+ * @author MyTheme
  *
  * The following code is a derivative work of the code from plugin "Safe SVG v-1.9.3"(https://wordpress.org/plugins/safe-svg/),
  * which is licensed GPLv2. This code therefore is also licensed under the terms
  * of the GNU Public License, verison 2.
  */
 
-namespace radiustheme\Lib;
+namespace MyTheme\Lib;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 

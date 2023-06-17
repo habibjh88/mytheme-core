@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  MyTheme
  * @since   1.0
  * @version 1.0
  * top_sub_title
@@ -11,7 +11,7 @@
  *
  */
 
-namespace radiustheme\MyTheme_Core;
+namespace MyTheme\MyTheme_Core;
 ?>
 <div class="section-title-wrapper">
 

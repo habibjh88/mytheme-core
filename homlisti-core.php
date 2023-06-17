@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: MyTheme Core
-Plugin URI: https://www.habibportfolio.com
+Plugin URI: http://habibportfolio.com/
 Description: MyTheme Theme Core Plugin
-Version: 1.6.15
-Author: RadiusTheme
-Author URI: https://www.habibportfolio.com
+Version: 1.0.0
+Author: MyTheme
+Author URI: http://habibportfolio.com/
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,7 +28,6 @@ class MyTheme_Core {
 	public function __construct() {
 		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ], 20 );
 		add_action( $this->action, [ $this, 'after_theme_loaded' ] );
-//		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_script' ] );
 	}
 
 	public static function instance() {
@@ -47,7 +46,6 @@ class MyTheme_Core {
 			require_once MYTHEME_CORE_BASE_DIR . 'elementor/init.php'; // Elementor
 		}
 	}
-
 
 	public function load_textdomain() {
 		load_plugin_textdomain( $this->plugin, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );

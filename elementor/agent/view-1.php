@@ -1,14 +1,14 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  MyTheme
  * @since   1.0
  * @version 1.0
  */
 
-namespace radiustheme\MyTheme_Core;
+namespace MyTheme\MyTheme_Core;
 use Rtcl\Helpers\Functions;
 use RtclStore\Models\Store;
-use radiustheme\MyTheme\Helper;
+use MyTheme\Helper;
 
 $query               = new \WP_Query( $data['query_args'] );
 $gird_column_desktop = ( $data['gird_column'] ? $data['gird_column'] : '3' );

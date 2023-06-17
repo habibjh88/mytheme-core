@@ -1,9 +1,9 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  MyTheme
  */
 
-namespace radiustheme\Lib;
+namespace MyTheme\Lib;
 
 class Sidebar_Generator {
 
